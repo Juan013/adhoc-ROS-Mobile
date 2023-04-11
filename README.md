@@ -24,7 +24,7 @@ The IoCA architecture for robotic manipulators and the result of using this app 
 
 
 <p align="center">
-    <img src="images/bothApps.png" alt="Custom Master Chooser" width="200" />
+    <img src="images/bothApps.png" alt="Custom Master Chooser" width="450" />
 <p/>
 
 
