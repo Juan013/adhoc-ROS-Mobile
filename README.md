@@ -4,8 +4,9 @@ This is an ad-hoc version of the Android application, named ROS-Mobile, for the 
 
 ## Purpose
 
-The purpose of this app is to tele-operate robotics manipulators using two joysticks: one of them is used for XY plane movements while the other one is for controlling the Z axis motion. At the same time, an IP camera can be displayed on the smartphone screen showing the images captured by eye-in-hand.
-Moreover, the same space on the screen can show the virtual environment associated with the digital twin of the robot. The user can switch between both visualizations using two buttons. In addition, a new ROS subscriber serves as a traffic light (green, yellow and red) to indicates the forces on the end-effector, where there is an ultrasound camera to perform a medical scanning. Finally, another layout is used for displaying the images coming from the ultrasound camera, which are coming from a LAN/WAN socket (IP + port).
+The purpose of this app is to tele-operate robotics manipulators using two joysticks: one of them is used for XY plane movements while the other one is for controlling the Z axis motion. At the same time, the images from an IP camera can be displayed on the smartphone screen. In this case, we are interested in showing the images captured by the eye-in-hand.
+
+Moreover, the same space on the screen can show the virtual environment associated with the digital twin of the robot. This visualization is associated with a screen stream from a LAN/WAN socket (IP + port). The user can switch between both visualizations using two buttons. In addition, a new ROS subscriber serves as a traffic light (green, yellow and red) to indicates the forces on the end-effector, where there is an ultrasound camera to perform a medical scanning. Finally, another layout is used for displaying the images coming from the ultrasound camera, which are coming from a LAN/WAN socket (IP + port).
 
 ## Results
 
