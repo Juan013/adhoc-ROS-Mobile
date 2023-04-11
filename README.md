@@ -5,7 +5,7 @@ This is an adhoc version of the Android application for the robot operating syst
 ## Main Interface 
 
 <p align="center">
-    <img src="images/ad-hocRM.jpg" alt="Custom Master Chooser" width="600" />
+    <img src="images/ad-hocRM.jpg" alt="Custom Master Chooser" width="200" />
 <p/>
 
 
