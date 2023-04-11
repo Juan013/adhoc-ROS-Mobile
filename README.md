@@ -1,14 +1,24 @@
 # adhoc-ROS-Mobile
 
-This is an adhoc version of the Android application for the robot operating system ROS-Mobile (Rottmann et al, 2020). The ad-hoc app is developed to integrate the capabilities of MQTT clients and ROS nodes on a smartphone. This way, different smartphones can play a different role within the Internet of Robotics Things or the Feedback Information System in a X-IoCA architecture (Bravo-Arrabal et al, 2021), depending on whether they act as information providers or remote processors and task monitors, respectively.
+This is an ad-hoc version of the Android application, named ROS-Mobile, for the robot operating system (Rottmann et al, 2020). The ad-hoc app is developed to integrate the capabilities of MQTT clients and ROS nodes on a smartphone.
 
-## Main Interface 
+## Purpose
+
+The purpose of this app is to tele-operate robotics manipulators using two joysticks: one of them is used for XY plane movements while the other one is for controlling the Z axis motion. At the same time, an IP camera can be displayed on the smarthone screen showing the images captured by the camera in the eye. 
+
+Moreover, the same space on the screen can show the virtual environment associated with the digital twin of the robot. The user can switch between both visualizations using two buttons. Finally, a new ROS subscriber serves as a traffic light (green, yellow and red) to indicates the forces on the end-effector, where there is an ultrasound camera to perform a medical scanning. 
+
+## Results
+
+The results of this test will be shown on a paper submitted to the Robotics and Automation Letters. 
+If the paper is accepted, more explanation will be written here.
+
+## Activity for control
 
 <p align="center">
     <img src="images/ad-hocRM.jpg" alt="Custom Master Chooser" width="200" />
 <p/>
 
-
-
+## References
 
 Rottmann, N., Studt, N., Ernst, F., & Rueckert, E. (2020). Ros-mobile: An android application for the robot operating system. arXiv preprint arXiv:2011.02781.
