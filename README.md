@@ -14,14 +14,17 @@ Finally, another ROS subscriber can be integrated, using the camera plugin, for 
 
 ## Results
 
-The results of this test will be shown on a paper submitted to the Robotics and Automation Letters. 
-If the paper is accepted, more explanation will be written here.
+The IoCA architecture for robotic manipulators and the result of using this app within it have been the subject of a research paper submitted to the IEEE Robotics and Automation Letters. If the paper is accepted, more explanation will be shown here.
 
 ## Activity for controlling the robotic manipulator
 
 <p align="center">
     <img src="images/ad-hocRM.jpg" alt="Custom Master Chooser" width="200" />
 <p/>
+
+
+## How to use
+
 
 ## References
 
