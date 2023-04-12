@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/viz_options_drawer"
+        android:layout_width="404dp"
+        android:layout_height="356dp"
+        android:layout_marginBottom="2dp"
+        android:fitsSystemWindows="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/camS"
+        app:layout_constraintVertical_bias="1.0"
+        tools:openDrawer="right">
+
+        <com.schneewittchen.rosandroid.ui.fragments.viz.WidgetViewGroup
+            android:id="@+id/widget_groupview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            app:crossColor="#8000BCD4">
+
+        </com.schneewittchen.rosandroid.ui.fragments.viz.WidgetViewGroup>
+
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="@android:color/transparent"
+            android:fitsSystemWindows="true"
+            android:visibility="visible">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="346dp"
+                android:background="@color/black01dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp">
+
+                <TextView
+                    android:id="@+id/viz_options_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Viz Options"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorAccent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/edit_viz_switch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Edit Mode"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/viz_options_textView"
+                    app:thumbTint="@color/colorAccent" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_viz_switch"
+                    app:srcCompat="@mipmap/eye" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.navigation.NavigationView>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+    <ImageButton
+        android:id="@+id/viz_options_open_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginBottom="1dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/viz_options_open_content"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/camS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_settings"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <WebView
+        android:id="@+id/camS"
+        android:layout_width="405dp"
+        android:layout_height="249dp"
+        android:layout_marginTop="56dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/viz_options_open_content"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_settings">
+
+    </WebView>
+
+    <Button
+        android:id="@+id/ipcam"
+        android:layout_width="63dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:text="DT"
+        app:layout_constraintStart_toEndOf="@+id/uscam"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/uscam"
+        android:layout_width="63dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:text="us"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <AutoCompleteTextView
+        android:id="@+id/url"
+        android:layout_width="198dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="4dp"
+        android:ems="5"
+        android:gravity="center"
+        android:hint="Digital Twin"
+        app:layout_constraintStart_toEndOf="@+id/ipcam"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.schneewittchen.rosandroid">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.webkit.PermissionRequest" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <queries>
+        <package android:name="com.example.umarosandroid" />
+        <package android:name="com.example.mqttkotlinsample" />
+    </queries>
+
+    <application
+        android:usesCleartextTraffic="true"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:icon">
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true"
+            android:screenOrientation="unspecified">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <service android:name=".model.repositories.rosRepo.node.NodeMainExecutorService"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="org.ros.android.NodeMainExecutorService" />
+            </intent-filter>
+        </service>
+
+        <!-- -->
+        <!-- Debajo: añadido desde librerías de terceros (ver Merged Manifest en la app original) -->
+        <activity
+            android:name="org.ros.android.MasterChooser"
+            android:label="@string/app_name"
+            android:launchMode="standard"
+            android:theme="@style/Theme.AppCompat"
+            android:exported="true"/>
+
+        <service
+            android:name="org.ros.android.NodeMainExecutorService"
+            tools:ignore="ExportedService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="org.ros.android.NodeMainExecutorService" />
+            </intent-filter>
+        </service>
+
+
+    </application>
+
+</manifest>
