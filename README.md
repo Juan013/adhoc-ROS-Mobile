@@ -12,6 +12,21 @@ On the other hand, another space on the screen can show the virtual environment 
 
 Finally, another ROS subscriber can be integrated, using the camera plugin, for displaying the images coming from the assitant's camera. The images of this  camera are published via ROS from another smartphone using the UMA-ROS-Android app.
 
+## New characteristics: 
+
+1) Visualization for IP cameras and screen stream
+2) A ROS node subscriber that establish a color on the screen depending on the values published on the topic
+3) The integration of a new tab to access to some MQTT clients.
+4) A new frontend for the activity where the widgets are shown (VizFragment).
+
+All in all, with respect to the ROS-Mobile app, a new ROS subscriber is included to show with colors (green, yellow or red) the intensity of the forces coming on a specific topic where the forces read by the sensor-in-hand are published.
+
+Thus, a new widget can be found: "buttonsubscriber".
+
+In addition, the class VizFragment.java and its layout associted (fragment_viz.xml) have been modified.
+
+The ssh tab has been replaced by the MQTT tab in order to connect with MQTT clients tha manages the DT of this research project.
+
 ## Results
 
 The IoCA architecture for robotic manipulators and the result of using this app within it have been the subject of a research paper submitted to the IEEE Robotics and Automation Letters. If the paper is accepted, more explanation will be shown here.
