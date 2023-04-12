@@ -313,15 +313,6 @@ class ClientFragmentDcam : Fragment() {
                 mAutoIncrement = true
                 repeatUpdateHandler.post(RptUpdaterDown())
 
-                /*
-                Toast.makeText(
-                    context,
-                    counter.toString(),
-                    Toast.LENGTH_SHORT
-                ).show()
-
-                 */
-                //Lo dejo a false para que no continúe incrementándose al soltar el botón.
                 false
             })
         // When the button is released, the incrementation of the value should be stopped.
@@ -336,39 +327,7 @@ class ClientFragmentDcam : Fragment() {
                 false
             })
 
-        /*
-        view.findViewById<Button>(R.id.down_button).setOnClickListener {
-            val topic = "topic"
-            //val topic   = "pv_jba*servo"
-            val message = "W180"
-
-            if (mqttClient.isConnected()) {
-                mqttClient.publish(topic,
-                    message,
-                    1,
-                    false,
-                    object : IMqttActionListener {
-                        override fun onSuccess(asyncActionToken: IMqttToken?) {
-                            val msg = "Publish message: $message to topic: $topic"
-                            Log.d(this.javaClass.name, msg)
-                            //Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
-                        }
-
-                        override fun onFailure(
-                            asyncActionToken: IMqttToken?,
-                            exception: Throwable?
-                        ) {
-                            Log.d(this.javaClass.name, "Failed to publish message to topic")
-                        }
-                    })
-            } else {
-                Log.d(this.javaClass.name, "Impossible to publish, no server connected")
-            }
-        }
-
-         */
-
-
+       
         // LEFT BUTTON
 
         class RptUpdaterLeft :
@@ -445,94 +404,17 @@ class ClientFragmentDcam : Fragment() {
             })
 
 
-        /*
-        view.findViewById<Button>(R.id.left_button).setOnClickListener {
 
-            val topic = "topic"
-            //val topic   = "pv_jba*servo"
-            val message = "B180"
-
-            if (mqttClient.isConnected()) {
-                mqttClient.publish(topic,
-                    message,
-                    1,
-                    false,
-                    object : IMqttActionListener {
-                        override fun onSuccess(asyncActionToken: IMqttToken?) {
-                            val msg = "Publish message: $message to topic: $topic"
-                            Log.d(this.javaClass.name, msg)
-                            //Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
-                        }
-
-                        override fun onFailure(
-                            asyncActionToken: IMqttToken?,
-                            exception: Throwable?
-                        ) {
-                            Log.d(this.javaClass.name, "Failed to publish message to topic")
-                        }
-                    })
-            } else {
-                Log.d(this.javaClass.name, "Impossible to publish, no server connected")
-            }
-        }
-
-         */
-/*
-
-//BOTON NORMAL:
-        view.findViewById<Button>(R.id.right_button).setOnClickListener {
-
-            val topic   = "topic"
-            //val topic   = "pv_jba*servo"
-            val message = "B0"
-
-            if (mqttClient.isConnected()) {
-                mqttClient.publish(topic,
-                    message,
-                    1,
-                    false,
-                    object : IMqttActionListener {
-                        override fun onSuccess(asyncActionToken: IMqttToken?) {
-                            val msg ="Publish message: $message to topic: $topic"
-                            Log.d(this.javaClass.name, msg)
-                            //Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
-                        }
-                        override fun onFailure(asyncActionToken: IMqttToken?, exception: Throwable?) {
-                            Log.d(this.javaClass.name, "Failed to publish message to topic")
-                        }
-                    })
-            } else {
-                Log.d(this.javaClass.name, "Impossible to publish, no server connected")
-            }
-        }
-
-
- */
-
-        /*
-        mBTIncrement.setOnLongClickListener(
-            new View.OnLongClickListener(){
-                public boolean onLongClick(View arg0) {
-                    mAutoIncrement = true;
-                    repeatUpdateHandler.post( new RptUpdater() );
-                    return false;
-                }
-            }
-    );
-         */
-
-        // Nota: necesito modificar el código del servo (Cheng) para que en vez de recibir la cadena B0 B180 W0 o W180,
-        // reciba un valor que siga a la W o a la B. SOLUCION ENCONTRADA. FALTA IMPLEMENTARLA.
 
         class RptUpdaterRigth:
-            Runnable { //esto es un thread que se ejecuta antes que la publicación del valor en el topic.
+            Runnable { 
             override fun run() {
                 if (mAutoDecrement) {
                     val textB = view.findViewById(R.id.textB) as TextView
                    // textB.setText("Base:")
                     if (counterB> 0 && counterB <= 180)
                     {
-                        counterB-=3 //incremento
+                        counterB-=3 
                         textB.setText("Base:"+counterB.toString()+"º")
                     }
                     else
@@ -575,14 +457,6 @@ class ClientFragmentDcam : Fragment() {
                 mAutoDecrement = true
                 repeatUpdateHandler.post(RptUpdaterRigth())
 
-                /*
-                Toast.makeText(
-                    context,
-                    counter.toString(),
-                    Toast.LENGTH_SHORT
-                ).show()
-
-                 */
 
                 false
             })
@@ -604,8 +478,6 @@ class ClientFragmentDcam : Fragment() {
                 R.id.action_clientFragmentDcam_to_ConnectFragment
             )
         }
-
-
 
 
     }

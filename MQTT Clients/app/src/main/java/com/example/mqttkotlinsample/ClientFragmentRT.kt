@@ -46,7 +46,7 @@ class ClientFragmentRT : Fragment() {
 
                             // Disconnection success, come back to Connect Fragment
 
-                            findNavController().navigate(com.example.mqttkotlinsample.R.id.action_clientFragmentRT_to_ConnectFragment2)   //////////////////////
+                            findNavController().navigate(com.example.mqttkotlinsample.R.id.action_clientFragmentRT_to_ConnectFragment2)   
                             // context: com.example.mqttkotlinsample.
 
                         }
@@ -106,7 +106,7 @@ class ClientFragmentRT : Fragment() {
 
 
         val seekj1 =
-            view.findViewById<SeekBar>(com.example.mqttkotlinsample.R.id.seekBarJ1) //com.example.mqttkotlinsample.R.id.seekBarJ1. Antes funcionaba con R.id.seekBarJ1
+            view.findViewById<SeekBar>(com.example.mqttkotlinsample.R.id.seekBarJ1) 
         seekj1.min = -36000 // I have added to zeros to have float.
         seekj1.max = 36000
         //val topic_j1  = "base"
@@ -129,7 +129,7 @@ class ClientFragmentRT : Fragment() {
         val seekj6 = view.findViewById<SeekBar>(com.example.mqttkotlinsample.R.id.seekBarJ6)
         seekj6.min = -36000
         seekj6.max = 36000
-        //val topic_j6 = "wrist3"
+ 
 
         seekj1.progress = 0
         baseValues.setText(seekj1.progress.toString() +" º")
@@ -295,7 +295,7 @@ class ClientFragmentRT : Fragment() {
                 //textView.setY(100); just added a value set this properly using screen with height aspect ratio , if you do not set it by default it will be there below seek bar
                 if (mqttClient.isConnected()) {
 
-                    // Si el checkbox está seleccionado, entonces se envía por este topic (mover robot), si no por el otro (mover punto)
+                   
                     mqttClient.publish(topic, message, 1, false, object : IMqttActionListener {
                         override fun onSuccess(asyncActionToken: IMqttToken?) {
                             val msg = "Publish message: $message to topic: $topic"
